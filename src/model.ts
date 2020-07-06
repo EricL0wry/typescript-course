@@ -2,7 +2,8 @@ let displayName: string = "Jess's standing desk";
 let inventoryType: string = "furniture";
 let trackingNumber: string = "FD123455";
 let createDate: Date = new Date();
-let originalCost = 425;
+let originalCost: any = 425;
+originalCost = "A LOT of money!";
 
 enum InventoryItemType {
     Computer = "computer",
@@ -34,7 +35,7 @@ inventoryItem.createDate = new Date();
 
 saveInventoryItem({
     displayName: "MacBook Pro 15 Retina",
-    inventoryType: "computer",
+    inventoryType: InventoryItemType.Computer,
     trackingNumber: "MBP123456",
     createDate: new Date(),
 });

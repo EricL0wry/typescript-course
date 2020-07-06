@@ -3,6 +3,7 @@ var inventoryType = "furniture";
 var trackingNumber = "FD123455";
 var createDate = new Date();
 var originalCost = 425;
+originalCost = "A LOT of money!";
 var InventoryItemType;
 (function (InventoryItemType) {
     InventoryItemType["Computer"] = "computer";
@@ -18,7 +19,7 @@ var updatedInventoryItem = inventoryItem;
 inventoryItem.createDate = new Date();
 saveInventoryItem({
     displayName: "MacBook Pro 15 Retina",
-    inventoryType: "computer",
+    inventoryType: InventoryItemType.Computer,
     trackingNumber: "MBP123456",
     createDate: new Date(),
 });
