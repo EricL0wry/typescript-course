@@ -24,7 +24,7 @@ var updatedInventoryItem = inventoryItem;
 inventoryItem.createDate = new Date();
 saveInventoryItem({
     displayName: "MacBook Pro 15 Retina",
-    inventoryType: InventoryItemType.Computer,
+    inventoryType: "computer",
     trackingNumber: "MBP123456",
     createDate: new Date(),
 });
