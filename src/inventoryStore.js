@@ -77,8 +77,8 @@ class InventoryStore {
       return errors;
     }
 
-    if (!item.type) {
-      addError("type", "Please select a valid Category");
+    if (!item.inventoryType) {
+      addError("inventoryType", "Please select a valid Category");
     }
 
     if (!item.name) {
@@ -95,7 +95,7 @@ class InventoryStore {
 
     //#endregion
 
-    switch (item.type) {
+    switch (item.inventoryType) {
       // Computer-specific validation
       case "computer":
         if (item.year > new Date().getFullYear()) {
@@ -137,7 +137,7 @@ class InventoryStore {
     return this._save();
   }
 
-  //#region Private methods
+  //#region Protected methods
 
   /*  NOTE:
    *  This demo uses local storage to save and load inventory items,
@@ -178,5 +178,5 @@ class InventoryStore {
 // Create a "static" singleton instance for the entire application to use
 InventoryStore.instance = new InventoryStore();
 
-// Expose the singleton as the default export
-export default InventoryStore.instance;
+// Expose the singleton in its own variable
+const inventoryStore = InventoryStore.instance;
