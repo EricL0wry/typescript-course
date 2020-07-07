@@ -9,6 +9,7 @@ class InventoryStore {
   _items: InventoryItem[] = [];
   _isInitialized: Promise<boolean>;
 
+
   /** the inventory categories */
   get categories() {
     return this._categories;
@@ -25,7 +26,6 @@ class InventoryStore {
   }
 
   constructor() {
-
     // load initial set of data
     this._isInitialized = this._load();
   }
@@ -181,8 +181,10 @@ class InventoryStore {
 
   //#endregion
 
+  // Create a "static" singleton instance for the entire application to use
   static instance = new InventoryStore();
 }
+
 
 // Expose the singleton in its own variable
 const inventoryStore = InventoryStore.instance;
